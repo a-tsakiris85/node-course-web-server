@@ -25,6 +25,11 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear())
 hbs.registerHelper('screamIt', (text) => text.toUpperCase());
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: "Project Page"
+  });
+});
 app.get('/', (req, res) => {
   //res.send('<h1>Hello Express </h1>'); //send some html
   // res.send({
@@ -53,5 +58,5 @@ app.get('/bad', (req, res) => { //send JSON with error message
   });
 });
 
-app
+
 app.listen(port); //put it on a port
