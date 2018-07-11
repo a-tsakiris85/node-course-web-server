@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-
+const port = process.env.PORT || 3000;
 app = express(); //initialize the app
 
 app.set('view engine', 'hbs');
@@ -54,4 +54,4 @@ app.get('/bad', (req, res) => { //send JSON with error message
 });
 
 app
-app.listen(3000); //put it on a port
+app.listen(port); //put it on a port
